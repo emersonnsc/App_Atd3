@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840516522694",
+    "project_id": "appatd3",
+    "storage_bucket": "appatd3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840516522694:android:e29bf037a7bd3449e33dc7",
+        "android_client_info": {
+          "package_name": "br.unimes.appatd3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3A2i_My8q_eIFKhYVJGIye9J9QFTVuG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
