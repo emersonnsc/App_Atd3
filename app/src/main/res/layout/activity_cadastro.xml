@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSurface"
+    tools:context=".CadastroActivity">
+
+    <!-- Título da Tela -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Cadastrar Produto"
+        android:textColor="@color/md_theme_primary"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Campo Nome do Produto -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_nome"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Nome do Produto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:textColor="@color/textColorPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo Preço -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_preco"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Preço (R$)"
+        app:layout_constraintEnd_toEndOf="@id/til_nome"
+        app:layout_constraintStart_toStartOf="@id/til_nome"
+        app:layout_constraintTop_toBottomOf="@id/til_nome">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_preco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/textColorPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo Quantidade -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_quantidade"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Quantidade"
+        app:layout_constraintEnd_toEndOf="@id/til_preco"
+        app:layout_constraintStart_toStartOf="@id/til_preco"
+        app:layout_constraintTop_toBottomOf="@id/til_preco">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_quantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/textColorPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botão de Cadastrar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cadastrar"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
+        android:text="Cadastrar"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/md_theme_primary"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="@id/til_quantidade"
+        app:layout_constraintStart_toStartOf="@id/til_quantidade"
+        app:layout_constraintTop_toBottomOf="@id/til_quantidade" />
+
+    <!-- Floating Action Button para ver a lista -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_lista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="Ver lista de produtos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/colorOnPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

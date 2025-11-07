@@ -5,54 +5,75 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_theme_background"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
+    <!-- Título do Aplicativo -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="App Atd3"
+        android:layout_marginTop="80dp"
+        android:text="Login"
+        android:textColor="#6750A3"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edt_email"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="88dp"
-        android:ems="10"
-        android:hint="Digite seu E-mail:"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/edt_senha"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Digite sua Senha:"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email" />
-
-    <Button
-        android:id="@+id/btn_logar"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
+    <!-- Campo de E-mail com Material Design -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="Logar"
+        android:hint="E-mail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_senha" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo de Senha com Material Design -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_senha"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Senha"
+        app:layout_constraintEnd_toEndOf="@id/til_email"
+        app:layout_constraintStart_toStartOf="@id/til_email"
+        app:layout_constraintTop_toBottomOf="@id/til_email"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botão de Login com Material Design -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logar"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/md_theme_primary"
+        android:text="Logar"
+        android:textColor="@color/md_theme_onPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/til_senha"
+        app:layout_constraintStart_toStartOf="@id/til_senha"
+        app:layout_constraintTop_toBottomOf="@id/til_senha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

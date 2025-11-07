@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="md_theme_primary">#6750A4</color> <!-- Cor primária padrão do Material 3 -->
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_background">#FFFBFE</color> <!-- Um branco levemente "quente" -->
+    <color name="colorPrimary">#6200EE</color> <!-- Roxo para destaque -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- Branco para texto em cima do roxo -->
+    <color name="colorSurface">#F5F5F5</color> <!-- Cinza claro para o fundo -->
+    <color name="textColorPrimary">#212121</color> <!-- Texto escuro -->
 </resources>
