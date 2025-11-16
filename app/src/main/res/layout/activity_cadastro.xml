@@ -1,28 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSurface"
+    android:background="#FDFBFB"
     tools:context=".CadastroActivity">
 
-    <!-- Título da Tela -->
+    <ImageView
+        android:id="@+id/iv_background_control"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:contentDescription="Imagem de um controle de videogame no fundo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_controle"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cadastrar"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Cadastrar Produto"
-        android:textColor="@color/md_theme_primary"
+        android:text="Adicione seu Jogo"
+        android:textColor="@color/blue"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Campo Nome do Produto -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_nome"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -31,7 +38,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
-        android:hint="Nome do Produto"
+        android:hint="Nome do Jogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
@@ -44,47 +51,44 @@
             android:textColor="@color/textColorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo Preço -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_preco"
+        android:id="@+id/til_plataforma"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Preço (R$)"
+        android:hint="Plataforma"
         app:layout_constraintEnd_toEndOf="@id/til_nome"
         app:layout_constraintStart_toStartOf="@id/til_nome"
         app:layout_constraintTop_toBottomOf="@id/til_nome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_preco"
+            android:id="@+id/edt_plataforma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textColor="@color/textColorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Campo Quantidade -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_quantidade"
+        android:id="@+id/til_estado_jogo"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Quantidade"
-        app:layout_constraintEnd_toEndOf="@id/til_preco"
-        app:layout_constraintStart_toStartOf="@id/til_preco"
-        app:layout_constraintTop_toBottomOf="@id/til_preco">
+        android:hint="Estado do Jogo (Ex: Zerado, Jogando...)"
+        app:layout_constraintEnd_toEndOf="@id/til_plataforma"
+        app:layout_constraintStart_toStartOf="@id/til_plataforma"
+        app:layout_constraintTop_toBottomOf="@id/til_plataforma">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_quantidade"
+            android:id="@+id/edt_estado_jogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="text"
             android:textColor="@color/textColorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Botão de Cadastrar -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cadastrar"
         android:layout_width="0dp"
@@ -93,21 +97,22 @@
         android:text="Cadastrar"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/md_theme_primary"
+        app:backgroundTint="@color/blue"
         app:cornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="@id/til_quantidade"
-        app:layout_constraintStart_toStartOf="@id/til_quantidade"
-        app:layout_constraintTop_toBottomOf="@id/til_quantidade" />
+        app:layout_constraintEnd_toEndOf="@id/til_estado_jogo"
+        app:layout_constraintStart_toStartOf="@id/til_estado_jogo"
+        app:layout_constraintTop_toBottomOf="@id/til_estado_jogo" />
 
-    <!-- Floating Action Button para ver a lista -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:contentDescription="Ver lista de produtos"
+        app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_list"
         app:tint="@color/colorOnPrimary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

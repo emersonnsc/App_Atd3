@@ -5,75 +5,113 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_theme_background"
-    android:padding="24dp"
+    android:background="?attr/colorSurface"
     tools:context=".MainActivity">
 
-    <!-- Título do Aplicativo -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Login"
-        android:textColor="#6750A3"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Campo de E-mail com Material Design -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_email"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+    <ImageView
+        android:id="@+id/iv_background_flames"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:hint="E-mail"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_chamas"
+        android:contentDescription="Imagem de chamas no fundo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_email"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:padding="24dp">
 
-    <!-- Campo de Senha com Material Design -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_senha"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Senha"
-        app:layout_constraintEnd_toEndOf="@id/til_email"
-        app:layout_constraintStart_toStartOf="@id/til_email"
-        app:layout_constraintTop_toBottomOf="@id/til_email"
-        app:passwordToggleEnabled="true">
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="Logo do aplicativo"
+                android:src="@drawable/app_logo"
+                app:layout_constraintBottom_toTopOf="@+id/til_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3"
+                app:layout_constraintVertical_chainStyle="packed" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_senha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_email"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="E-mail"
+                app:layout_constraintBottom_toTopOf="@+id/til_senha"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_logo">
 
-    <!-- Botão de Login com Material Design -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_logar"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/md_theme_primary"
-        android:text="Logar"
-        android:textColor="@color/md_theme_onPrimary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@id/til_senha"
-        app:layout_constraintStart_toStartOf="@id/til_senha"
-        app:layout_constraintTop_toBottomOf="@id/til_senha" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_senha"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Senha"
+                app:layout_constraintBottom_toTopOf="@+id/btn_logar"
+                app:layout_constraintEnd_toEndOf="@id/til_email"
+                app:layout_constraintStart_toStartOf="@id/til_email"
+                app:layout_constraintTop_toBottomOf="@id/til_email"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:paddingVertical="12dp"
+                android:text="Entrar"
+                android:textSize="16sp"
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_cadastro"
+                app:layout_constraintEnd_toEndOf="@id/til_senha"
+                app:layout_constraintStart_toStartOf="@id/til_senha"
+                app:layout_constraintTop_toBottomOf="@id/til_senha" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cadastro"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Não possui uma conta? Cadastre-se"
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/btn_logar"
+                app:layout_constraintStart_toStartOf="@id/btn_logar"
+                app:layout_constraintTop_toBottomOf="@id/btn_logar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
