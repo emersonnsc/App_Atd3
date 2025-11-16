@@ -14,8 +14,10 @@
         android:contentDescription="Imagem de um controle de videogame no fundo"
         android:scaleType="centerCrop"
         android:src="@drawable/img_controle"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cadastrar"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cadastrar" />
 
     <TextView
         android:id="@+id/tv_title"
